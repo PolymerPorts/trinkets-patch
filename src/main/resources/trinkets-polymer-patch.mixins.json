@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "package": "eu.pb4.trinketspatch.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "EntitySlotLoaderMixin",
+    "InventoryMenuMixin",
+    "LivingEntityMixinSquared",
+    "PlayerListMixin",
+    "ServerCommonPacketListenerImplMixin",
+    "ServerGamePacketListenerImplMixin",
+    "TrinketsApiMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "client.TrinketRendererMixin",
+    "client.TrinketsClientMixin"
+  ]
+}

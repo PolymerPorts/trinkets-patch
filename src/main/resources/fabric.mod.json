@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "trinkets-polymer-patch",
+	"version": "${version}",
+	"name": "Polymer Patch for Trinkets Updated",
+	"description": "Polymer Patch for Trinkets Updated",
+	"authors": [
+		"Patbox"
+	],
+	"contact": {
+		"homepage": "https://pb4.eu",
+		"sources": "https://github.com/PolymerPorts/trinkets-patch"
+	},
+	"license": "LGPLv3",
+	"icon": "assets/trinkets-patch/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"eu.pb4.trinketspatch.impl.TrinketsPolymerPatch"
+		],
+		"mixinsquared": [
+			"eu.pb4.trinketspatch.mixin.TrinketsMixinCanceller"
+		]
+	},
+	"mixins": [
+		"trinkets-polymer-patch.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.0",
+		"trinkets_updated": ">=4.0.0-beta.1",
+		"minecraft": ">=26.1",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
