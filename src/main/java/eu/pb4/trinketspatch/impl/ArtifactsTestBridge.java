@@ -9,11 +9,14 @@ import eu.pb4.polymer.core.api.utils.PolymerSyncedObject;
 import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.gameevent.GameEvent;
 
 public class ArtifactsTestBridge {
+    private static final EntityType<?> ARMOR_STAND = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.withDefaultNamespace("armor_stand"));
+
     public static void setup() {
         var id = "artifacts";
         PolymerResourcePackUtils.addModAssets(id);
@@ -56,7 +59,7 @@ public class ArtifactsTestBridge {
 
         RegistryEntryAddedCallback.allEntries(BuiltInRegistries.ENTITY_TYPE, item -> {
             if (item.key().identifier().getNamespace().equals(id)) {
-                PolymerEntityUtils.registerOverlay(item.value(), _ -> _ -> EntityType.ARMOR_STAND);
+                PolymerEntityUtils.registerOverlay(item.value(), _ -> _ -> ARMOR_STAND);
             }
         });
     }
