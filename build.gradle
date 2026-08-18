@@ -69,7 +69,7 @@ dependencies {
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
 
-	api ("eu.pb4:trinkets:4.1.0-beta.1+26.2")
+	api ("eu.pb4:trinkets:4.1.0-rc.1+26.2")
 
 
 	implementation include('eu.pb4:sgui:2.1.0+26.2')

@@ -7,7 +7,7 @@ import eu.pb4.sgui.api.elements.GuiElementBuilder;
 import eu.pb4.sgui.api.gui.SimpleGui;
 import eu.pb4.trinkets.api.DefaultTrinketSlots;
 import eu.pb4.trinkets.impl.LivingEntityTrinketAttachment;
-import eu.pb4.trinkets.impl.SurvivalTrinketSlot;
+import eu.pb4.trinkets.impl.slots.SurvivalTrinketSlot;
 import eu.pb4.trinkets.impl.TrinketInventoryImpl;
 import eu.pb4.trinketspatch.impl.res.GuiTextures;
 import net.minecraft.ChatFormatting;
@@ -21,6 +21,7 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import org.apache.commons.lang3.function.Predicates;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -165,7 +166,7 @@ public class TrinketsFlatUI extends SimpleGui {
         if (trinketInventory.getContainerSize() <= invSize) {
             for (int i = 0; i < invSize; i++) {
                 if (i < trinketInventory.getContainerSize()) {
-                    this.setSlot(base + slot++, new SurvivalTrinketSlot(trinketInventory, i, 0, 0, this.component.getGroups().get(type.group()), type, true, this.player));
+                    this.setSlot(base + slot++, new SurvivalTrinketSlot(trinketInventory, i, 0, 0, Predicates.truePredicate(), false, this.player));
                 } else {
                     this.setSlot(base + slot++, GuiTextures.FILLER.get(hasPack).hideTooltip());
                 }
@@ -179,7 +180,7 @@ public class TrinketsFlatUI extends SimpleGui {
         } else {
             for (int i = 0; i < invSize; i++) {
                 if (subPage * invSize + i < trinketInventory.getContainerSize()) {
-                    this.setSlot(base + slot++, new SurvivalTrinketSlot(trinketInventory, subPage * invSize + i, 0, 0, this.component.getGroups().get(type.group()), type, true, this.player));
+                    this.setSlot(base + slot++, new SurvivalTrinketSlot(trinketInventory, subPage * invSize + i, 0, 0, Predicates.truePredicate(), false, this.player));
                 } else {
                     this.setSlot(base + slot++, GuiTextures.FILLER.get(hasPack).hideTooltip());
                 }

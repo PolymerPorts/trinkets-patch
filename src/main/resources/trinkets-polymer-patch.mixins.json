@@ -9,7 +9,8 @@
     "PlayerListMixin",
     "ServerCommonPacketListenerImplMixin",
     "ServerGamePacketListenerImplMixin",
-    "TrinketsApiMixin"
+    "TrinketsApiMixin",
+    "TrinketsMainMixin"
   ],
   "injectors": {
     "defaultRequire": 1
