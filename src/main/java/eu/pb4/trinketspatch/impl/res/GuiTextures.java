@@ -15,13 +15,13 @@ public class GuiTextures {
     public static final Function<Component, Component> FLAT_GUI = background("flat_gui");
     public static final Function<Component, Component> FLAT_GUI_COMPACT = background("flat_gui_compact");
 
-    public static final Element FILLER = Element.of(Items.STAINED_GLASS_PANE.white(), "filler");
-    public static final Element FILLER_NAVBAR = new Element(Items.STAINED_GLASS_PANE.black(), () -> new GuiElementBuilder(Items.AIR));
+    public static final Element FILLER = Element.of(Items.WHITE_STAINED_GLASS_PANE, "filler");
+    public static final Element FILLER_NAVBAR = new Element(Items.BLACK_STAINED_GLASS_PANE, () -> new GuiElementBuilder(Items.AIR));
 
 
-    public static final Element PREVIOUS = Element.of(Items.STAINED_GLASS_PANE.green(), "previous");
-    public static final Element NEXT = Element.of(Items.STAINED_GLASS_PANE.green(), "next");
-    public static final Element SUBPAGE = Element.of(Items.STAINED_GLASS_PANE.lightBlue(), "subpage");
+    public static final Element PREVIOUS = Element.of(Items.GREEN_STAINED_GLASS_PANE, "previous");
+    public static final Element NEXT = Element.of(Items.GREEN_STAINED_GLASS_PANE, "next");
+    public static final Element SUBPAGE = Element.of(Items.LIGHT_BLUE_STAINED_GLASS_PANE, "subpage");
 
 
     public static void register() {

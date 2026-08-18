@@ -15,6 +15,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.Tuple;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
@@ -190,6 +191,20 @@ public class UiResourceCreator {
         var texture = new FontTexture(path, ascent, height, new char[][] { new char[] {c} });
         FONT_TEXTURES.add(texture);
         return c;
+    }
+
+    public static Tuple<Component, Component> polydexBackground(String path) {
+        var c = (character++);
+        var d = (character++);
+
+        var texture = new FontTexture(id("sgui/polydex/" + path), -4, 128, new char[][] {new char[] { c }, new char[] { d } });
+
+        FONT_TEXTURES.add(texture);
+
+        return new Tuple<>(
+                Component.literal(Character.toString(c)).setStyle(STYLE),
+                Component.literal(Character.toString(d)).setStyle(STYLE)
+        );
     }
 
     public static char space(int width) {
