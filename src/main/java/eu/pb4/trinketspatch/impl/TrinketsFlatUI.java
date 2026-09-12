@@ -6,6 +6,7 @@ import eu.pb4.polymer.resourcepack.extras.api.ResourcePackExtras;
 import eu.pb4.sgui.api.elements.GuiElementBuilder;
 import eu.pb4.sgui.api.gui.SimpleGui;
 import eu.pb4.trinkets.api.DefaultTrinketSlots;
+import eu.pb4.trinkets.api.TrinketSlotUtils;
 import eu.pb4.trinkets.impl.LivingEntityTrinketAttachment;
 import eu.pb4.trinkets.impl.slots.SurvivalTrinketSlot;
 import eu.pb4.trinkets.impl.TrinketInventoryImpl;
@@ -166,7 +167,7 @@ public class TrinketsFlatUI extends SimpleGui {
         if (trinketInventory.getContainerSize() <= invSize) {
             for (int i = 0; i < invSize; i++) {
                 if (i < trinketInventory.getContainerSize()) {
-                    this.setSlot(base + slot++, new SurvivalTrinketSlot(trinketInventory, i, 0, 0, Predicates.truePredicate(), false, this.player));
+                    this.setSlot(base + slot++, TrinketSlotUtils.createSlot(trinketInventory.getOrCreateSlotAccess(i), 0, 0));
                 } else {
                     this.setSlot(base + slot++, GuiTextures.FILLER.get(hasPack).hideTooltip());
                 }
@@ -180,7 +181,7 @@ public class TrinketsFlatUI extends SimpleGui {
         } else {
             for (int i = 0; i < invSize; i++) {
                 if (subPage * invSize + i < trinketInventory.getContainerSize()) {
-                    this.setSlot(base + slot++, new SurvivalTrinketSlot(trinketInventory, subPage * invSize + i, 0, 0, Predicates.truePredicate(), false, this.player));
+                    this.setSlot(base + slot++, TrinketSlotUtils.createSlot(trinketInventory.getOrCreateSlotAccess(subPage * invSize + i), 0, 0));
                 } else {
                     this.setSlot(base + slot++, GuiTextures.FILLER.get(hasPack).hideTooltip());
                 }
