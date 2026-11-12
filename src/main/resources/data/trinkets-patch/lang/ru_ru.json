@@ -1,0 +1,5 @@
+{
+  "trinkets.name": "Аксессуары",
+  "trinkets.command.compact.true": "Компактный интерфейс Вкл.",
+  "trinkets.command.compact.false": "Компактный интерфейс Выкл."
+}
